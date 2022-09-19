@@ -36,4 +36,11 @@ public class CharacterController : MonoBehaviour
         //characterBody.velocity = Vector3.up * flySpeed;
         characterBody.AddForce(Vector3.up * flySpeed);
     }
+
+    private bool IfTouchingFloor()
+    {
+        RaycastHit hit;
+        return Physics.SphereCast(transform.position, 0.15f, -transform.up, out hit, 1f);
+
+    }
 }
